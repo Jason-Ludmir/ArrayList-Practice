@@ -3,7 +3,8 @@
 #include <string.h>
 #include <string>
 #include <vector>
-#include "UniqueChars.h"
+//#include "UniqueChars.h"
+//#include "PalindromePerm.h"
 
 using namespace std;
 
@@ -18,21 +19,24 @@ Ch1_toggle::Ch1_toggle()
 	}
 	int func_id;
 
-	//Get num_Args_needed here
+	//CHANGE AS SIZE INCREASES
 	if (function.compare("uniquechars") == 0) {
 		num_args = UniqueChars::num_args;
 		func_id = 1;
+	}
+	else if (function.compare("palindromeperm") == 0) {
+		num_args = PalindromePerm::num_args;
+		func_id = 2;
 	}
 	else if (function.compare("exit") == 0) {
 		exit(0);
 	}
 	else if (function.compare("help") == 0) { //CHANGE AS SIZE INCREASES
-		for (int i = 0; i < 2; i++) {
+		for (int i = 0; i < 3; i++) {
 			cout << funcs[i] << ": " << tooltip[i] << endl;
 		}
 		return;
 	}
-	//CHANGE AS SIZE INCREASES
 	else {
 		cout << "No such function. Continuing." << endl;
 		return;
@@ -47,10 +51,19 @@ Ch1_toggle::Ch1_toggle()
 
 	switch(func_id){ //CHANGE AS SIZE INCREASES
 		case 1:
+		{
 			UniqueChars uc(data.at(0));
 			cout << "Checking string for uniqueness: " << data.at(0) << endl;
 			bool ret = uc.DetermineUniqueness();
 			break;
+		}
+		case 2:
+		{
+			PalindromePerm pp(data.at(0));
+			cout << "Checking string for possible palindromes: " << data.at(0) << endl;
+			pp.CheckIfPalin();
+			break;
+		}
 		//Add more cases here
 	}
 }

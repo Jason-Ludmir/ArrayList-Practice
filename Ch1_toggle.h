@@ -1,8 +1,9 @@
 #pragma once
-#include "UniqueChars.h"
 #include <iostream>
 #include <string.h>
 #include <vector>
+#include "UniqueChars.h"
+#include "PalindromePerm.h"
 
 using namespace std;
 
@@ -10,8 +11,8 @@ class Ch1_toggle
 {
 private:
 	string function;
-	string funcs[2] = {"UniqueChars", "exit"}; //CHANGE AS SIZE INCREASESs
-	string tooltip[2] = { "Function which takes a string, and determines if chars in string are unique.","Exits the program."}; //CHANGE AS SIZE INCREASES
+	string funcs[3] = {"UniqueChars", "PalindromePerm", "exit"}; //CHANGE AS SIZE INCREASESs
+	string tooltip[3] = { "Function which takes a string, and determines if chars in string are unique.", "Function which takes a string, and determines if a palindrome can be constructed from it.", "Exits the program."}; //CHANGE AS SIZE INCREASES
 	vector<string> data;
 	int num_args = 0;
 
